@@ -9,12 +9,12 @@ public class GestionAliments {
 		
 	}
 	
-	// on peut aussi le faire avec un it�rateur qui fait du previous c'est plus malin ;)
-	// ajoute une sous-cat�gorie � la LinkedListe. Les sous-cat�gories sont rang�es par cat�gorie
+	// on peut aussi le faire avec un itérateur qui fait du previous c'est plus malin ;)
+	// ajoute une sous-catégorie é la LinkedListe. Les sous-catégories sont rangées par catégorie
 	public void ajouterSousCategorieAliments(SousCategorie ssCat){
 		int indexDernierElem = -1;
 		
-		// PAS PROPRE BOUHH !! get recr�e un it�rateur qui parcoure une deuxi�me fois la liste (parce que c'est une liste li�e pas accessible sur les index...)
+		// PAS PROPRE BOUHH !! get recrée un itérateur qui parcoure une deuxiéme fois la liste (parce que c'est une liste liée pas accessible sur les index...)
 		for(int indexCourant = 0; indexCourant < ensembleSousCatAliments.size(); indexCourant++){
 			if(ensembleSousCatAliments.get(indexCourant).getCategorie().equals(ssCat.getCategorie())) indexDernierElem= indexCourant;
 		}
@@ -22,7 +22,7 @@ public class GestionAliments {
 		else ensembleSousCatAliments.add(ssCat);
 	}
 	
-	// ajoute un aliment � la sous cat�gorie de la LinkedListe SI la sous cat�gorie existe
+	// ajoute un aliment é la sous catégorie de la LinkedListe SI la sous catégorie existe
 	public void ajouterAliment(SousCategorie ssCat, Aliment alim){
 		if(ensembleSousCatAliments.contains(ssCat)){
 			for(SousCategorie ssCatCourante : ensembleSousCatAliments){
@@ -47,8 +47,8 @@ public class GestionAliments {
 		
 	}
 	
-	/*------------ M�thodes � arguments variables  -----------*/
-	// ajoute un aliment � la sous cat�gorie de la LinkedListe SI la sous cat�gorie existe
+	/*------------ Méthodes é arguments variables  -----------*/
+	// ajoute un aliment é la sous catégorie de la LinkedListe SI la sous catégorie existe
 		public void ajouterAliments(SousCategorie ssCat, Aliment... tabAliments){
 			if(ensembleSousCatAliments.contains(ssCat)){
 				for(SousCategorie ssCatCourante : ensembleSousCatAliments){
@@ -62,7 +62,7 @@ public class GestionAliments {
 		}
 		
 		public void ajouterSousCategories(SousCategorie... tabSousCats){
-			//Pourquoi pas ? on a d�j� cod� la m�thode, pas besoin de faire du copier/coller
+			//Pourquoi pas ? on a déjé codé la méthode, pas besoin de faire du copier/coller
 			for(SousCategorie ssCat : tabSousCats){
 				this.ajouterSousCategorieAliments(ssCat);
 			}

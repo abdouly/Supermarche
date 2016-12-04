@@ -11,7 +11,7 @@ public class Categorie {
 		listeCategories.add(nom);
 	}
 	
-	//autre possibilit� : constructeur par copie
+	//autre possibilité : constructeur par copie
 	public Categorie getCopy(){
 		return new Categorie(this.nom);
 	}

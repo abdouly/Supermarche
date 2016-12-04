@@ -2,16 +2,16 @@ package deqo.ably.produit;
 
 public class Aliment extends Produit {
 	
-	//plus besoin avec h�ritage
+	//plus besoin avec héritage
 	//private String nom;
 	
 	public Aliment(String nom){
-		//anciennement avant h�ritage de produit
+		//anciennement avant héritage de produit
 		//this.nom = nom; 
 		super(nom);
 	}
 	
-	//pas besoin avec h�ritage
+	//pas besoin avec héritage
 	/*public String toString(){
 		return this.nom;
 	}*/

@@ -1,7 +1,7 @@
 package deqo.ably.produit;
 
 //Ce n'est pas une classe abstraite au sens de l'objet, y'a pas d'"abstract"
-//C'est une classe m�re utilis�e pour la g�n�ricit�
+//C'est une classe mére utilisée pour la généricité
 
 public class Produit {
 	private String nom;

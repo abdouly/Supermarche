@@ -4,12 +4,12 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-// Pour �viter de devoir �crire une classe gestionAlimentaire, gestionMultimedia, gestionNettoyage, etc. on fait une classe g�n�rique
+// Pour éviter de devoir écrire une classe gestionAlimentaire, gestionMultimedia, gestionNettoyage, etc. on fait une classe générique
 public class GestionProduits<T extends Produit> {
 	private LinkedList<SousCatProd<T>> ensembleSsCatProds = new LinkedList<SousCatProd<T>>();
 
-	//il r�le parce qu'il n'a pas d'infos sur le type T, qui ne peut pas �tre v�rifi�. Le compilo ne peut pas prouver qu'il n'y
-	//aura pas de classe cast exception, si T n'h�rite pas de Produit...
+	//il réle parce qu'il n'a pas d'infos sur le type T, qui ne peut pas étre vérifié. Le compilo ne peut pas prouver qu'il n'y
+	//aura pas de classe cast exception, si T n'hérite pas de Produit...
 	public void ajouterSousCatProduits(SousCatProd<T>... tabSsCats){
 		for (SousCatProd<T> natureAplacer : tabSsCats) {
 			int indexDernierElement=-1;
@@ -34,7 +34,7 @@ public class GestionProduits<T extends Produit> {
 				for (SousCatProd<T> natureEnCours : ensembleSsCatProds) {
 					if (natureEnCours.equals(nature)) natureEnCours.ajouterProduit(produit);
 				}
-				validation+="L'aliment "+produit+" a bien �t� ajout�\n";
+				validation+="L'aliment "+produit+" a bien été ajouté\n";
 			}
 		}
 		
@@ -55,23 +55,23 @@ public class GestionProduits<T extends Produit> {
 	}
 	
 	public void supprimerSousCat(SousCatProd<T> nature){
-		//m�thode 1 : �a marche alors que �a devrait pas, parce que le equals fonctionne alors qu'il devrait pas!! en tous cas on l'a pas red�finit
+		//méthode 1 : éa marche alors que éa devrait pas, parce que le equals fonctionne alors qu'il devrait pas!! en tous cas on l'a pas redéfinit
 		/*for(SousCatProd<T> ssCat : ensembleSsCatProds){
 			if(ssCat.getNom() == nature.getNom()){
 				//ensembleSsCatProds.remove(ensembleSsCatProds.indexOf(ssCat));
 				ensembleSsCatProds.remove(ssCat);
 			}
 		}*/
-		//�a marche parce qu'il y a pas d'acc�s concurrents !!! marche que si c'est le m�me pointeur si m�thode equals pas overrid�e
+		//éa marche parce qu'il y a pas d'accés concurrents !!! marche que si c'est le méme pointeur si méthode equals pas overridée
 		ensembleSsCatProds.remove(nature);
 
 		/*Iterator<SousCatProd<T>> i = ensembleSsCatProds.iterator();
 		while(i.hasNext()){
 			SousCatProd<T> sscat = (SousCatProd<T>)i.next();
 			if(sscat.getNom() == nature.getNom()){
-				//m�thode 2 : pas d'action sur la liste en dehors de l'it�rateur, sinon liste modifi�e par un autre thread (autre it�rateur...) 
+				//méthode 2 : pas d'action sur la liste en dehors de l'itérateur, sinon liste modifiée par un autre thread (autre itérateur...) 
 				//ensembleSsCatProds.remove(sscat);
-				// m�thode 3
+				// méthode 3
 				i.remove();
 			}
 		}*/
@@ -137,7 +137,7 @@ public class GestionProduits<T extends Produit> {
 		return str;
 	}
 	
-	//retourne les produits d'une souscat�gorie
+	//retourne les produits d'une souscatégorie
 	public String affichageProduit(SousCatProd<T> ssCat){
 		return ensembleSsCatProds.get(ensembleSsCatProds.indexOf(ssCat)).affichageProduit();
 	}
